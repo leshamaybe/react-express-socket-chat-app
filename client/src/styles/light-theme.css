@@ -1,0 +1,65 @@
+.light {
+    background-color: #fff;
+}
+
+body.light svg {
+    transition: all 0.2s ease;
+    color: #000;
+}
+
+body.light svg:hover {
+    transition: all 0.2s ease;
+    color: #0a80ff;
+}
+
+body.light {
+    color: #000;
+}
+
+body.light li a:hover {
+    background-color: #fff!important;
+}
+
+body.light .action-list-item:hover,
+body.light .action-list-item a:hover {
+    background-color: #e6e6e6!important;
+}
+
+body.light .nav-box,
+body.light .chats-container,
+body.light .chat-header,
+body.light .chat-footer,
+body.light .chat-input,
+body.light .emoji-btn,
+body.light .action-list-item,
+body.light .chats-input {
+    border-color: #ebebeb;
+}
+
+body.light .chat-input,
+body.light .chats-input {
+    color: #495057;
+    transition: all 0.1s ease;
+}
+
+body.light .chat-input:focus,
+body.light .chats-input:focus {
+    transition: all 0.1s ease;
+    outline: none;
+    border-color: #0a80ff;
+}
+
+body.light .chat-submit-btn svg {
+    color: #fff;
+    border-color: #ebebeb;
+}
+
+body.light .emoji-btn:hover {
+    background-color: #c8c8c8;
+    transition: all 0.1s ease;
+}
+
+body.light .emoji-btn {
+    background-color: #e6e6e6;
+    transition: all 0.1s ease;
+}

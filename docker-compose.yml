@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+    app:
+        container_name: app
+        build:
+            context: ./client
+            dockerfile: Dockerfile
+        ports:
+            - '3000:3000'
+    server:
+        container_name: server
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - '7000:7000'
+        environment:
+            - MONGODB_URL=mongo
+            - MONGODB_PORT=27017
+        links:
+            - mongo
+    mongo:
+        container_name: mongo
+        image: mongo
+        ports:
+            - 27017:27017
+        volumes:
+            - db-data:/data/db
+
+volumes:
+    db-data:

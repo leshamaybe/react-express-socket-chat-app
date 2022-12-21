@@ -1,0 +1,95 @@
+.chats-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 351px;
+    flex-shrink: 1;
+    border-right: 1px solid rgb(41, 49, 69);
+}
+
+.chats-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 80px;
+}
+
+.chats-header span {
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'inter', sans-serif;
+}
+
+.chats-form {
+    display: flex;
+    padding: 17px 30px;
+    margin-bottom: 14px;
+}
+
+.chats-input {
+    display: inline-flex;
+    flex-shrink: 1;
+    flex-grow: 1;
+    padding: 10px 15px;
+    background-color: inherit;
+    transition: all 0.1s ease;
+    color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.5), 0 0 0 0.15vw transparent;
+    border-radius: 0.4vw;
+    border: none;
+    outline: none;
+}
+
+.chats-input:hover {
+    box-shadow: 0 0 0 0.15vw rgba(135, 207, 235, 0.186);
+}
+
+.chats-input:focus {
+    transition: all 0.1s ease;
+    outline: none;
+    box-shadow: 0 0 0 0.15vw #0a80ff;
+}
+
+.chats-input::placeholder {
+    font-weight: 500;
+}
+
+.chats-list {
+    display: flex;
+    flex-direction: column;
+    font-family: 'inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.chats-list button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style: none;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid rgb(41, 49, 69);
+    padding: 17px 30px;
+    text-align: center;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.chats-list button:focus,
+.chats-list button:hover {
+    background-color: #1f273b;
+}
+
+.chats-list button h4 {
+    font-size: 16px;
+    margin: 0;
+    width: 100%;
+    text-align: start;
+    margin-left: 15px;
+}
+
+.chats-list button span img {
+    border-radius: 50%;
+}
