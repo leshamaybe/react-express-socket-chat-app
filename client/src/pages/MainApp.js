@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const MainApp = () => {
     const navigate = useNavigate();
-    const [currentChat, setCurrentChat] = useState({ username: '', userID: '' });
+    const [currentChat, setCurrentChat] = useState({ username: '', userID: '', toSocket: '' });
 
     useEffect(() => {
         if (!localStorage.getItem('username')) {

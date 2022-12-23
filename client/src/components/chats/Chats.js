@@ -1,27 +1,38 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { ChatsHeader } from './ChatsHeader';
 import { SocketContext } from '../../context/socketContext';
+import { useHttp } from '../../hooks/http.hook';
 
 const ChatsList = ({ setCurrentChat }) => {
     const socket = useContext(SocketContext);
-    const [usersFromServer, setUsersFromServer] = useState([]);
+    const [users, setUsers] = useState([]);
+    const { request } = useHttp();
 
     useEffect(() => {
+        // const getUsers = async () => {
+        //     const data = await request('http://localhost:7000/auth/users/', 'GET');
+
+        //     console.log(data);
+        // };
+
+        // getUsers();
+
         socket.on('users', (data) => {
             data.forEach((user) => {
                 user.self = user.userID === socket.id;
             });
-            setUsersFromServer(data);
+            setUsers(data);
         });
-    }, [socket]);
+    }, [request, socket]);
 
     const handleChosenUser = (username, userID) => {
         setCurrentChat({ username: username, userID: userID });
     };
 
+
     return (
         <ul className="chats-list">
-            {usersFromServer.map((user, i) => (
+            {users.map((user, i) => (
                 <button key={i} onClick={() => handleChosenUser(user.username, user.userID)}>
                     <span>
                         <img src="http://dummyimage.com/36" alt="" />

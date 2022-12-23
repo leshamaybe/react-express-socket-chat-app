@@ -69,7 +69,8 @@ io.on('connection', async (socket) => {
     console.log(connections);
 
     socket.on('send message', (data) => {
-        io.to([data.to, socket.id]).emit('response msg', data);
+        io.emit('response msg', data);
+        // io.to([data.to, socket.id]).emit('response msg', data);
         console.log(data);
     });
 
@@ -81,7 +82,7 @@ io.on('connection', async (socket) => {
 
 async function startApp() {
     try {
-        await mongoose.connect(`mongodb://mongo:27017/`);
+        await mongoose.connect(`mongodb://127.0.0.1:27017/`);
         server.listen(port, server, () => {
             console.log(`Server listens http://${host}:${port}`);
         });
