@@ -81,7 +81,7 @@ io.on('connection', async (socket) => {
 
 async function startApp() {
     try {
-        await mongoose.connect(`mongodb://mongo:27017/`);
+        await mongoose.connect(`mongodb://127.0.0.1:27017/`);
         server.listen(port, server, () => {
             console.log(`Server listens http://${host}:${port}`);
         });
