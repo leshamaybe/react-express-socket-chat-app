@@ -69,7 +69,8 @@ io.on('connection', async (socket) => {
     console.log(connections);
 
     socket.on('send message', (data) => {
-        io.to([data.to, socket.id]).emit('response msg', data);
+        io.emit('response msg', data);
+        // io.to([data.to, socket.id]).emit('response msg', data);
         console.log(data);
     });
 

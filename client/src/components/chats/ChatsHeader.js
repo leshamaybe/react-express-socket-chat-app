@@ -4,7 +4,7 @@ export const ChatsHeader = () => {
     return (
         <>
             <header className="chats-header">
-                <span>Chats</span>
+                <span>Online</span>
                 <ul className="action-list">
                     <li className="action-list-item">
                         <a href="/#" className="link">
@@ -28,9 +28,9 @@ export const ChatsHeader = () => {
                     </li>
                 </ul>
             </header>
-            <form className="chats-form">
+            {/* <form className="chats-form">
                 <input type="text" name='chats-input' className="chats-input" placeholder='Найти чат'/>
-            </form>
+            </form> */}
         </>
     );
 };

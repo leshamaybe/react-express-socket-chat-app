@@ -13,7 +13,7 @@ const Message = new Schema(
         },
         userId: {
             type: String,
-            required: true,
+            required: false,
         },
         senderName: {
             type: String,

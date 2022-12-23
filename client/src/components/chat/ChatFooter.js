@@ -31,7 +31,7 @@ export const ChatFooter = ({ currentChat }) => {
             if (input.value) {
                 await request('http://localhost:7000/auth/addMessage/', 'POST', {
                     textOrPathToFile: input.value,
-                    userId: currentChat.username,
+                    userId: currentChat.userID,
                     senderName: localStorage.getItem('username'),
                 });
 
@@ -39,7 +39,7 @@ export const ChatFooter = ({ currentChat }) => {
                     text: input.value,
                     from: localStorage.getItem('username'),
                     user: currentChat.username,
-                    to: currentChat.userID,
+                    // to: currentChat.userID,
                 });
                 setInput({ value: '' });
             } else {
